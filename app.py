@@ -85,10 +85,3 @@ predicted_load = model.predict(user_input_df)
 
 st.subheader("Prediction Result")
 st.write(f"**Predicted Patellofemoral Joint Load:** `{predicted_load[0]:.2f}` N/kg")
-
-# ========== Step 7: SHAP 可解释性分析（可选） ==========
-with st.expander("Show Model Interpretation (SHAP Analysis)"):
-    explainer = shap.Explainer(model, X_train)
-    shap_values = explainer(X_train)
-    st.write("Feature importance based on SHAP values:")
-    shap.summary_plot(shap_values, X_train, plot_type="bar")
