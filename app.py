@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 import xgboost as xgb
 from sklearn.model_selection import train_test_split
-import shap
 
 # ========== Step 1: 加载数据并重命名列 ==========
 @st.cache_data
@@ -85,3 +84,4 @@ predicted_load = model.predict(user_input_df)
 
 st.subheader("Prediction Result")
 st.write(f"**Predicted Patellofemoral Joint Load:** `{predicted_load[0]:.2f}` N/kg")
+
