@@ -8,10 +8,7 @@ from sklearn.model_selection import train_test_split
 # ========== Step 1: 加载数据并重命名列 ==========
 @st.cache_data
 def load_data():
-    data1 = pd.read_csv(
-        r"D:\A运动生物力学\新疆师范大学博士资料\小论文\PFP\数据\PFP-zixuan-筛选.csv",
-        encoding='gbk'
-    )
+    data1 = pd.read_csv("PFP-zixuan-筛选.csv", encoding='gbk')
     data1.dropna(inplace=True)
 
     data1.columns = [
@@ -84,4 +81,5 @@ predicted_load = model.predict(user_input_df)
 
 st.subheader("Prediction Result")
 st.write(f"**Predicted Patellofemoral Joint Load:** `{predicted_load[0]:.2f}` N/kg")
+
 
